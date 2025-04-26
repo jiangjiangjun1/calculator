@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package calculator.v1;
+
+option go_package = "github.com/jiangjiangjun1/calculator-backend/calculator/v1;calculatorv1";
+
+service CalculatorService {
+  rpc Calculate(CalculateRequest) returns (CalculateResponse);
+}
+
+message CalculateRequest {
+  double operand1 = 1;
+  double operand2 = 2;
+  string operator = 3; // "+", "-", "*", "/"
+}
+
+message CalculateResponse {
+  double result = 1;
+}
